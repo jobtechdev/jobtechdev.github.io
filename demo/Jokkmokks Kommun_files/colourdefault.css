@@ -1,0 +1,10 @@
+table.jokkmokk tbody tr:nth-child(even) { background-color: #eee;}
+table.jokkmokk tbody tr:nth-child(odd) {background-color:#fff;}
+table.jokkmokk thead tr	{ background-color:#ccc;  color: #000; } /* default v.01 */
+
+/*.jokk-green{background-color:#1f7843}
+.jokk-blue{background-color:#1e599e}
+.jokk-yellow{background-color:#ffc62d}
+.jokk-red{background-color:#c30c25}*/
+
+

@@ -1,0 +1,43 @@
+(function(){
+var key = "-opiT";
+var widget = document.getElementById('wrapper'+key);
+var widget_insert = document.getElementById('load'+key);
+var widget_url = document.getElementById('url'+key);
+var widget_h2 = document.getElementById('h2'+key);
+var widget_detail = document.getElementById('url_detail'+key);
+var days = 3;
+var maxtemp = 0;
+var wind = 0;
+var height = 210+maxtemp+wind;
+var width = 80*days;
+var iframeHeight = 130+maxtemp+wind;
+var textAlign = "text-align:center;";
+widget_h2.style.cssText = 'float:none;margin-top:0px;margin-bottom:0px;line-height:25px;background:#ffffff;padding:0px;text-transform:none;letter-spacing:normal;';
+widget_detail.style.cssText = 'font-size: 12px;font-weight: bold;color:#363636;border-style:none;';
+var yr_style = "font-size:10px;text-decoration: none;color:#363636;font-family: Arial, Helvetica, sans-serif;"
+widget.style.cssText = 'width:' + width + 'px; height:' + height +'px;padding-top:10px;background-color: #ffffff;' + textAlign;
+widget_url.style.cssText = 'font-size: 20px;color:#363636;font-weight: bold;text-decoration: none;font-family: Arial, Helvetica, sans-serif;';
+var url="";
+if (location.protocol === 'https:') {
+url = "https://widget.vackertvader.se/widgetv3?geonameid=2702997&bgcolor=ffffff&border=none&size=x215&textcolor=363636&days=3&maxtemp=no&wind=no&unit=&amp;lang=";
+}else{
+url = "http://widget.vackertvader.se/widgetv3?geonameid=2702997&bgcolor=ffffff&border=none&size=x215&textcolor=363636&days=3&maxtemp=no&wind=no&unit=&amp;lang=";
+}
+//var url = "http://api2.vackertvader.se:4013/widgetv3?geonameid=2702997&bgcolor=ffffff&border=none&size=x215&textcolor=363636&days=3&maxtemp=no&wind=no&unit=&amp;lang=";
+var iframe = document.createElement("iframe");
+iframe.id = "widget_iframe";
+iframe.height = iframeHeight;
+iframe.width = '100%';
+iframe.scrolling = 'no';
+iframe.src = url;
+iframe.setAttribute("frameBorder","0");
+widget_insert.appendChild(iframe);
+var yr = document.createElement("div");
+yr.id = "widget_yr"
+yr.style.cssText = yr_style;
+yr.innerHTML = "Data från<a style=\"text-decoration: none;color:#363636;\" href=\"http://www.yr.no\" target=\"_parent\"> yr.no</a>, MI, NRK.";
+	    widget_insert.appendChild(yr);
+	    
+ 
+  return false;
+})()
