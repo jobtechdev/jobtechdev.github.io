@@ -31,7 +31,7 @@
     window.onload = function () {
         //Load jQuery version 3.2.0 if it isn't already loaded.
         if (typeof jQuery == 'undefined' || window.jQuery.fn.jquery !== '3.2.0') {
-            getScript('http://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.js', function () {
+            getScript('https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.js', function () {
                 if (typeof window.jQuery == 'undefined') {
                     if (window.console) console.log('Sorry, but jQuery wasn\'t able to load');
                 } else {
@@ -97,8 +97,8 @@
         }
 
         // loadScripts(["script/pagination.js", "script/jquery.modal.js"], function () {
-        getScript("http://52.169.31.165/script/pagination.js", function(){
-            getScript("http://52.169.31.165/script/jquery.modal.js", function(){
+        getScript("script/pagination.js", function(){ // http://52.169.31.165/script/pagination.js
+            getScript("script/jquery.modal.js", function(){ // http://52.169.31.165/script/jquery.modal.js
             $.modal.defaults = {
                 fadeDuration: 200,
                 closeExisting: true,
@@ -117,7 +117,7 @@
 
             afModal = $("#afmodal");
 
-            afModal.load('http://52.169.31.165/template/templates.html', '#afmodal-content', function (response, status, xhr) {
+            afModal.load('template/templates.html', '#afmodal-content', function (response, status, xhr) { // http://52.169.31.165/template/templates.html
                 if (status == "error") {
                     console.log("Couldn't fetch a resource for job ads. Error:" + xhr.statusText); //TODO fix this, should go into modal window
                 } else {
@@ -269,4 +269,3 @@
 
 
 })(window, document);
-
