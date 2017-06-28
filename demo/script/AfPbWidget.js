@@ -1,7 +1,7 @@
 (function (window, document) {
 
     var jQuery, $;
-    var baseUrl = 'https://api.arbetsformedlingen.se/af/v0/platsannonser/';
+    var baseUrl = 'http://api.arbetsformedlingen.se/af/v0/platsannonser/';
     var $pagination,
         $afWidgetContainer,
         defaultOpts,
