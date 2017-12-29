@@ -28,17 +28,15 @@
         ///////////////////////////////////////////////////////////////////////////////////////////////
         // PARAMETERS (MODIFY THIS PART) //////////////////////////////////////////////////////////////
         _self.params = {
-            cookiePolicyUrl : 'https://www.arbetsformedlingen.se/Globalmeny/Om-webbplatsen/Anvanda-webbplatsen.html#Cookiesovrigt',
-            popupPosition : 'top',
+            cookiePolicyUrl : '../cookies',
+            //popupPosition : 'top',
             colorStyle : 'default',
             compactStyle : false,
-            //popupTitle : 'This website is using cookies',
-            popupTitle : 'Operational problems!',
-            //popupText : 'We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we\'ll assume that you are happy to receive all cookies on this website.',
-            popupText : "We're having technical difficulties with Platsbanken API (api.arbetsformedlingen.se/af/v0/platsannonser/...). Troubleshooting is in progress",
+            popupTitle : 'This website is using cookies',
+            popupText : 'We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we\'ll assume that you are happy to receive all cookies on this website.',
             buttonContinueTitle : 'Continue',
             buttonLearnmoreTitle : 'Learn&nbsp;more',
-            buttonLearnmoreOpenInNewWindow : true,
+            buttonLearnmoreOpenInNewWindow : false,
             agreementExpiresInDays : 30,
             autoAcceptCookiePolicy : false,
             htmlMarkup : null
@@ -144,13 +142,13 @@
                 '<div class="eupopup-head">' + _self.params.popupTitle + '</div>' +
                 '<div class="eupopup-body">' + _self.params.popupText + '</div>' +
                 '<div class="eupopup-buttons">' +
-                //'<a href="#" class="eupopup-button eupopup-button_1">' + _self.params.buttonContinueTitle + '</a>' +
-                //'<a href="' + _self.params.cookiePolicyUrl + '"' +
-                //(_self.params.buttonLearnmoreOpenInNewWindow ? ' target=_blank ' : '') +
-                //' class="eupopup-button eupopup-button_2">' + _self.params.buttonLearnmoreTitle + '</a>' +
+                '<a href="#" class="eupopup-button eupopup-button_1">' + _self.params.buttonContinueTitle + '</a>' +
+                '<a href="' + _self.params.cookiePolicyUrl + '"' +
+                (_self.params.buttonLearnmoreOpenInNewWindow ? ' target=_blank ' : '') +
+                ' class="eupopup-button eupopup-button_2">' + _self.params.buttonLearnmoreTitle + '</a>' +
                 '<div class="clearfix"></div>' +
                 '</div>' +
-                //'<a href="#" class="eupopup-closebutton">x</a>' +
+                '<a href="#" class="eupopup-closebutton">x</a>' +
                 '</div>';
 
             return html;
@@ -254,8 +252,8 @@
         if ($(".eupopup").length > 0) {
             $(document).euCookieLawPopup().init({
                 'info' : 'YOU_CAN_ADD_MORE_SETTINGS_HERE',
-                'popupTitle' : 'Operational problem! ',
-                'popupText' : "We're having technical difficulties with Platsbanken API (api.arbetsformedlingen.se/af/v0/platsannonser/...). Troubleshooting in progress"
+                'popupTitle' : 'This website is using cookies ',
+                'popupText' : "We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we\'ll assume that you are happy to receive all cookies on this website."
             });
         }
     });
