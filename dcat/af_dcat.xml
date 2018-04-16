@@ -50,7 +50,7 @@
 
     <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
 
-    <dcterms:title xml:lang="sv">Platsbanken</dcterms:title>
+    <dcterms:title xml:lang="sv">Current jobs</dcterms:title>
 
     <dcterms:description>
 
